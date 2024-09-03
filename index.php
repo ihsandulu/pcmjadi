@@ -69,7 +69,7 @@ switch (ENVIRONMENT)
 		error_reporting(-1);
 		ini_set('display_errors', 1);
 	break;
-
+error_reporting(E_ALL & ~E_DEPRECATED);
 	case 'testing':
 	case 'production':
 		ini_set('display_errors', 0);
@@ -81,6 +81,7 @@ switch (ENVIRONMENT)
 		{
 			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
 		}
+		error_reporting(E_ALL & ~E_DEPRECATED);
 	break;
 
 	default:
